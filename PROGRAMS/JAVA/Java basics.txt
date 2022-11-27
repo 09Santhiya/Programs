@@ -1,0 +1,213 @@
+//ASCII VALUE
+
+import java.util.Scanner;
+public class Main
+{
+   public static void main(String[] args)
+   {
+      char ch;
+      int ascii;
+      Scanner scan = new Scanner(System.in);
+      
+      System.out.print("Enter a Character: ");
+      ch = scan.next().charAt(0);
+      
+      ascii = ch;
+      System.out.println("\nASCII Value = " +ascii);
+   }
+}
+
+
+//SIMPLE INTEREST 
+
+import java.util.Scanner;
+
+public class Main
+{
+   public static void main(String[] args)
+   {
+      float p, r, t, si;
+      Scanner scan = new Scanner(System.in);
+      
+      System.out.print("Enter the Principle Amount: ");
+      p = scan.nextFloat();
+      System.out.print("Enter the Rate of Interest: ");
+      r = scan.nextFloat();
+      System.out.print("Enter the Time Period (in Year): ");
+      t = scan.nextFloat();
+      
+      si = (p*r*t)/100;
+      System.out.println("\nSimple Interest = " +si);
+   }
+}
+
+//PASCAL TRIANGLE
+
+public class Main
+{
+   public static void main(String[] args)
+   {
+      int row=5, i, j, space, num;
+      for(i=0; i<row; i++)
+      {
+         for(space=row; space>i; space--)
+         {
+            System.out.print(" ");
+         }
+         num=1;
+         for(j=0; j<=i; j++)
+         {
+            System.out.print(num+ " ");
+            num = num*(i-j)/(j+1);
+         }
+         System.out.print("\n");
+      }
+   }
+}
+
+
+//BINARY SEARCH
+
+import java.util.Scanner;
+public class Main
+{
+   public static void main(String[] args)
+   {
+      int size=10, i, search, first, last, middle;
+      int[] arr = new int[size];
+      Scanner scan = new Scanner(System.in);
+      System.out.print("Enter 10 Elements");
+      for(i=0; i<size; i++)
+      {
+         arr[i] = scan.nextInt();
+      }
+      System.out.print("Enter an Element to Search: ");
+      search = scan.nextInt();
+      
+      first = 0;
+      last = size-1;
+      middle = (first+last)/2;
+      
+      while(first<=last)
+      {
+         if(arr[middle]<search)
+         {
+            first = middle+1;
+         }
+         else if(arr[middle]==search)
+         {
+            System.out.println("\nThe element is available at Index No." +middle);
+            break;
+         }
+         else
+         {
+            last = middle-1;
+         }
+         middle = (first+last)/2;
+      }
+      
+      if(first>last)
+      {
+         System.out.println("\n element is not available in array");
+      }
+   }
+}
+
+//FACTORIAL NUMBER
+import java.util.Scanner;
+public class Main
+{
+   public static void main(String[] args)
+   {
+      int num, i, fact=1;
+      Scanner s = new Scanner(System.in);
+      System.out.print("Enter a Number: ");
+      num = s.nextInt();
+      
+      for(i=num; i>=1; i--)
+      {
+         fact = fact*i;
+      }
+      
+      System.out.println("\nFactorial Result = " +fact);
+   }
+}
+
+//DECIMAL TO BINARY
+import java.util.Scanner;
+public class Main
+{
+   public static void main(String[] args)
+   {
+      int decimal, i=0;
+      int[] binary = new int[20];
+      Scanner scan = new Scanner(System.in);
+      System.out.print("Enter the Decimal Number: ");
+      decimal = scan.nextInt();
+      while(decimal != 0)
+      {
+         binary[i] = decimal%2;
+         i++;
+         decimal = decimal/2;
+      }
+      
+      System.out.print("\nEquivalent Binary Value = ");
+      for(i=(i-1); i>=0; i--)
+         System.out.print(binary[i]);
+   }
+}
+
+
+//BUBBLE SORT
+import java.util.Scanner;
+public class Main
+{
+   public static void main(String[] args)
+   {
+      int n=10, i, j, x;
+      int[] array = new int[n];
+      Scanner s = new Scanner(System.in);
+      System.out.print("Enter 10 Elements in Random Order: ");
+      for(i=0; i<n; i++)
+      {
+         array[i] = s.nextInt();
+      }
+      for(i=0; i<(n-1); i++)
+      {
+         for(j=0; j<(n-i-1); j++)
+         {
+            if(array[j]>array[j+1])
+            {
+               x = array[j];
+               array[j] = array[j+1];
+               array[j+1] = x;
+            }
+         }
+      }
+      
+      System.out.println("\nThe new sorted array is:");
+      for(i=0; i<n; i++)
+         System.out.print(array[i]+ " ");
+   }
+}
+
+
+//CONCATENATE TWO STRINGS
+
+import java.util.Scanner;
+public class Main
+{
+   public static void main(String[] args)
+   {
+      String a, b;
+      Scanner scan = new Scanner(System.in);
+      
+      System.out.print("Enter the First String: ");
+      a = scan.nextLine();
+      System.out.print("Enter the Second String: ");
+      b = scan.nextLine();
+      
+      a = a.concat(b);
+      System.out.println("\nFirst string after concatenation: " +a);
+   }
+}
